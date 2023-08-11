@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
+
 namespace projectEF.Models;
 
 public class Tarea
@@ -16,6 +18,8 @@ public class Tarea
     public DateTime FechaCreacion { get; set; }
     public virtual Categoria Categoria { get; set; }
     //[NotMapped]
+    
+    [JsonIgnore]
     public string resumen { get; set; }
 }
 
